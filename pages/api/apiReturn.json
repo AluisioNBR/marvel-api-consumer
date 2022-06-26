@@ -1,0 +1,64 @@
+[
+  {
+    "id": 1009262,
+    "name": "Daredevil",
+    "description": "Abandoned by his mother, Matt Murdock was raised by his father, boxer \"Battling Jack\" Murdock, in Hell's Kitchen. Realizing that rules were needed to prevent people from behaving badly, young Matt decided to study law; however, when he saved a man from an oncoming truck, it spilled a radioactive cargo that rendered Matt blind while enhancing his remaining senses. Under the harsh tutelage of blind martial arts master Stick, Matt mastered his heightened senses and became a formidable fighter.",
+    "modified": "2020-03-04T16:09:36-0500",
+    "thumbnail": {
+      "path": "http://i.annihil.us/u/prod/marvel/i/mg/d/50/50febb79985ee",
+      "extension": "jpg"
+    },
+    "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009262",
+    "comics": {
+      "available": 1196,
+      "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009262/comics",
+      "items": [
+        {
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/29317",
+          "name": "ACTS OF VENGEANCE CROSSOVERS OMNIBUS (Hardcover)"
+        }
+      ],
+      "returned": 20
+    },
+    "series": {
+      "available": 297,
+      "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009262/series",
+      "items": [
+        {
+          "resourceURI": "http://gateway.marvel.com/v1/public/series/9994",
+          "name": "ACTS OF VENGEANCE CROSSOVERS OMNIBUS (2011)"
+        }
+      ],
+      "returned": 20
+    },
+    "stories": {
+      "available": 1900,
+      "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009262/stories",
+      "items": [
+        {
+          "resourceURI": "http://gateway.marvel.com/v1/public/stories/533",
+          "name": "Interior #533",
+          "type": "interiorStory"
+        } 
+      ],
+      "returned": 20
+    },
+    "events": {
+      "available": 17,
+      "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009262/events",
+      "items": [
+        {
+          "resourceURI": "http://gateway.marvel.com/v1/public/events/116",
+          "name": "Acts of Vengeance!"
+        },
+      ],
+      "returned": 17
+    },
+    "urls": [
+      {
+        "type": "detail",
+        "url": "http://marvel.com/comics/characters/1009262/daredevil?utm_campaign=apiRef&utm_source=deeacbb44c4f621594bd69eed5e99093"
+      },
+    ]
+  }
+]

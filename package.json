@@ -9,6 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.8",
+    "@mantine/core": "^4.2.10",
+    "@mantine/hooks": "^4.2.10",
+    "@mantine/next": "^4.2.10",
+    "@types/js-md5": "^0.4.3",
+    "apollo-server": "^3.9.0",
+    "axios": "^0.27.2",
+    "graphql": "^16.5.0",
+    "js-md5": "^0.7.3",
     "next": "12.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0"
