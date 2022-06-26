@@ -1,5 +1,5 @@
 import { useState, useEffect, Dispatch, SetStateAction} from 'react';
-import type { MarvelApiCharacterResponse } from './api/typeDefs'
+import type { MarvelApiCharacterResponse } from '../pages/api/typeDefs'
 
 import { useStyles } from '../styles/useStyles'
 import { AppHeader } from './AppHeader'
