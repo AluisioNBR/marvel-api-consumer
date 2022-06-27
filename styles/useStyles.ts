@@ -58,7 +58,6 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   searchItemModal: {
     display: 'flex',
     alignItems: 'flex-start',
-    flexWrap: 'no-wrap',
     gap: '1rem',
 
     color: '#fdfdfd',

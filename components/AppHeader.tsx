@@ -1,5 +1,6 @@
 import { Title, TextInput, Button, Group, } from '@mantine/core';
 import { useStyles } from '../styles/useStyles'
+import type { Dispatch, SetStateAction } from 'react';
 
 export function AppHeader({ searchValue, setSearchValue }: SearchBarProps){
   const { classes } = useStyles();

@@ -1,10 +1,6 @@
 import {
-  Title,
-  TextInput,
-  Button,
   Image,
   Modal,
-  Group
 } from '@mantine/core';
 import { useState } from 'react';
 
@@ -88,7 +84,7 @@ function ItemResult(){
               fontSize: '1.1rem'
             }}
           >
-            Abandoned by his mother, Matt Murdock was raised by his father, boxer "Battling Jack" Murdock, in Hell's Kitchen. Realizing that rules were needed to prevent people from behaving badly, young Matt decided to study law; however, when he saved a man from an oncoming truck, it spilled a radioactive cargo that rendered Matt blind while enhancing his remaining senses. Under the harsh tutelage of blind martial arts master Stick, Matt mastered his heightened senses and became a formidable fighter.
+            {`Abandoned by his mother, Matt Murdock was raised by his father, boxer "Battling Jack" Murdock, in Hell's Kitchen. Realizing that rules were needed to prevent people from behaving badly, young Matt decided to study law; however, when he saved a man from an oncoming truck, it spilled a radioactive cargo that rendered Matt blind while enhancing his remaining senses. Under the harsh tutelage of blind martial arts master Stick, Matt mastered his heightened senses and became a formidable fighter.`}
           </p>
         </div>
       </Modal>
