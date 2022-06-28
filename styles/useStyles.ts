@@ -31,7 +31,16 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   },
 
   searchBar: {
-    width: '16rem'
+    width: '16rem',
+
+    label: {
+      color: '#fdfdfd',
+      fontWeight: 'bold'
+    },
+    input: {
+      backgroundColor: '#efefef',
+      color: '#000'
+    },
   },
 
   results: {

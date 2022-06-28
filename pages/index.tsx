@@ -19,7 +19,13 @@ function HomeHead(){
   )
 }
 
-const Home: NextPage = () => {
+const Home: NextPage = ({
+  marvelApiKeyPublic,
+  marvelApiKeyPrivate
+}: {
+  marvelApiKeyPublic: string,
+  marvelApiKeyPrivate: string
+}) => {
   return (
     <MantineProvider 
       theme={{
@@ -28,9 +34,21 @@ const Home: NextPage = () => {
       }}>
       <HomeHead/>
 
-      <AppBody />
+      <AppBody
+        marvelApiKeyPublic={marvelApiKeyPublic}
+        marvelApiKeyPrivate={marvelApiKeyPrivate}
+      />
     </MantineProvider>
   )
 }
 
 export default Home
+
+export async function getStaticProps(context) {
+  return {
+    props: {
+      marvelApiKeyPublic: process.env.PUBLIC_KEY,
+      marvelApiKeyPrivate: process.env.PRIVATE_KEY
+    },
+  }
+}
