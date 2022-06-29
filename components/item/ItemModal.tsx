@@ -1,4 +1,5 @@
-import { Image, Modal, } from '@mantine/core';
+import { Image, Modal, Anchor } from '@mantine/core';
+import Link from 'next/link'
 import { useStyles } from '../../styles/useStyles'
 import type { Dispatch, SetStateAction } from 'react';
 
@@ -21,30 +22,55 @@ export function ItemModal({
 
   return (
     <Modal
-        opened={opened}
-        onClose={() => setOpened(false)}
-        overflow='inside' centered={true}
-        styles={{
-          modal: {
-            backgroundColor: '#202020',
-            width: '90vw',
-          },
-        }}
-      >
-        <div className={classes.searchItemModal}>
+      opened={opened}
+      onClose={() => setOpened(false)}
+      overflow='inside' centered={true}
+      styles={{
+        modal: {
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+
+          backgroundColor: '#202020',
+          width: '90vw',
+        },
+      }}
+    >
+      <div className={classes.searchItemModal}>
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center'
+        }}>
           <Image
             src={thumbnail}
-            alt={children} caption={children}
+            alt={children}
             width={200} height={200} radius="md"
-            styles={{
-              caption: { color: '#fdfdfd', fontWeight: 'bold', fontSize: '1.8rem' },
-            }}
           />
 
-          <p style={{ fontSize: '1.1rem' }}>
-            {description}
+          <p style={{
+            color: '#fdfdfd',
+            fontWeight: 'bold',
+            fontSize: '1.8rem',
+            textAlign: 'center'
+          }}>
+            {children}
           </p>
         </div>
-      </Modal>
+
+        <p style={{ fontSize: '1.1rem' }}>{description}</p>
+      </div>
+
+      <Anchor component={Link} href="http://marvel.com">
+        <a
+          style={{
+            color: '#fdfdfd', fontWeight: 'bold'
+          }}
+          target="__blank"
+        >
+          Data provided by Marvel. © 2022 MARVEL
+        </a>
+      </Anchor>
+    </Modal>
   )
 }

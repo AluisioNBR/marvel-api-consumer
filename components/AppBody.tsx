@@ -3,25 +3,26 @@ import type { MarvelApiCharacterResponse, Character } from '../pages/api/typeDef
 import { AppHeader } from './AppHeader'
 import { AppMain } from './AppMain'
 
-export function AppBody({
-  marvelApiKeyPublic,
-  marvelApiKeyPrivate
-}: {
-  marvelApiKeyPublic: string,
-  marvelApiKeyPrivate: string
-}){
+import type { StaticProps } from '../pages/index'
+
+type response = [
+  MarvelApiCharacterResponse | null,
+  Dispatch<SetStateAction<MarvelApiCharacterResponse>> | Dispatch<SetStateAction<null>>
+]
+type results = [
+  Character[] | [],
+  Dispatch<SetStateAction<Character[]>> | Dispatch<SetStateAction<[]>>
+]
+
+export function AppBody(props: StaticProps){
   const [searchBar, setSearchBar] = useState('')
-  const [response, setResponse]: [
-    MarvelApiCharacterResponse | null,
-    Dispatch<SetStateAction<MarvelApiCharacterResponse>> | Dispatch<SetStateAction<null>>
-  ] = useState(null)
-  const [results, setResults]: [
-    Character[] | [],
-    Dispatch<SetStateAction<Character[]>> | Dispatch<SetStateAction<[]>>
-  ] = useState([])
+  const [response, setResponse]: response = useState(null)
+  const [results, setResults]: results = useState([])
 
   useEffect(() => {
-    if(response != null){
+    const responseIsNull = response != null
+
+    if(responseIsNull){
       const content = response as MarvelApiCharacterResponse
       
       const charactersResults = setResults as Dispatch<SetStateAction<Character[]>>
@@ -32,9 +33,7 @@ export function AppBody({
   return (
     <div>
       <AppHeader
-        marvelApiKeyPublic={marvelApiKeyPublic}
-        marvelApiKeyPrivate={marvelApiKeyPrivate}
-
+        staticProps={props}
         searchValue={searchBar}
         setSearchValue={setSearchBar}
         setResponse={setResponse}

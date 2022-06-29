@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
 
 import styles from '../styles/Home.module.css'
 
 import { MantineProvider } from '@mantine/core';
-
 import { AppBody } from '../components/AppBody'
 
 function HomeHead(){
@@ -19,13 +19,12 @@ function HomeHead(){
   )
 }
 
-const Home: NextPage = ({
-  marvelApiKeyPublic,
-  marvelApiKeyPrivate
-}: {
+interface StaticProps{
   marvelApiKeyPublic: string,
   marvelApiKeyPrivate: string
-}) => {
+}
+
+const Home: NextPage<StaticProps> = (props: StaticProps) => {
   return (
     <MantineProvider 
       theme={{
@@ -35,8 +34,8 @@ const Home: NextPage = ({
       <HomeHead/>
 
       <AppBody
-        marvelApiKeyPublic={marvelApiKeyPublic}
-        marvelApiKeyPrivate={marvelApiKeyPrivate}
+        marvelApiKeyPublic={props.marvelApiKeyPublic}
+        marvelApiKeyPrivate={props.marvelApiKeyPrivate}
       />
     </MantineProvider>
   )
@@ -44,7 +43,7 @@ const Home: NextPage = ({
 
 export default Home
 
-export async function getStaticProps(context) {
+export const getStaticProps: GetStaticProps = async(context) => {
   return {
     props: {
       marvelApiKeyPublic: process.env.PUBLIC_KEY,
@@ -52,3 +51,5 @@ export async function getStaticProps(context) {
     },
   }
 }
+
+export type { StaticProps }

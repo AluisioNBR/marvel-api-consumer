@@ -24,11 +24,11 @@ export function ItemResult({ children, thumbnail, description }: ItemResultInter
       <ItemModal
         opened={opened}
         setOpened={setOpened}
-
         description={description}
         thumbnail={thumbnail}
-        children={children}
-      />
+      >
+        {children}
+      </ItemModal>
     </div>
   )
 }
