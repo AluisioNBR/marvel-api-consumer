@@ -13,6 +13,7 @@
     "@mantine/core": "^4.2.10",
     "@mantine/hooks": "^4.2.10",
     "@mantine/next": "^4.2.10",
+    "@mantine/notifications": "^4.2.11",
     "@types/js-md5": "^0.4.3",
     "apollo-server": "^3.9.0",
     "axios": "^0.27.2",
@@ -20,7 +21,8 @@
     "js-md5": "^0.7.3",
     "next": "12.1.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "tabler-icons-react": "^1.52.0"
   },
   "devDependencies": {
     "@types/node": "18.0.0",

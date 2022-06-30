@@ -2,6 +2,8 @@ import { TextInput, Button, Group, } from '@mantine/core';
 import md5 from 'js-md5'
 import axios from 'axios'
 
+import { showNotification } from '@mantine/notifications';
+import { Error404 } from 'tabler-icons-react';
 import { useStyles } from '../styles/useStyles'
 
 import type { Dispatch, SetStateAction } from 'react';
@@ -32,7 +34,21 @@ export function FormToSearch({ staticProps, searchValue, setSearchValue, setResp
         data: data as MarvelApiCharacterResponse,
         setResponse: setResponse as Dispatch<SetStateAction<MarvelApiCharacterResponse>>
       })
-    } catch(e){ console.log(e) }
+    } catch(e){
+      showNotification({
+        autoClose: 5000,
+        title: "Character not found!",
+        message: 'No characters were found in this quest',
+        color: 'red',
+        icon: <Error404 size={32} strokeWidth={2.5} color={'#fdfdfd'}/>,
+        styles: {
+          root: { backgroundColor: '#202020' },
+          icon: { padding: '.2rem' },
+          title: { color: '#ff5555' },
+          description: { color: '#fdfdfd' },
+        }
+      })
+    }
   }
   
   return (

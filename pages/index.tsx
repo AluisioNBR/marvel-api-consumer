@@ -5,6 +5,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
 import { MantineProvider } from '@mantine/core';
+import { NotificationsProvider } from '@mantine/notifications';
 import { AppBody } from '../components/AppBody'
 
 function HomeHead(){
@@ -30,13 +31,16 @@ const Home: NextPage<StaticProps> = (props: StaticProps) => {
       theme={{
         fontFamily: 'Open Sans, sans serif',
         spacing: { xs: 15, sm: 20, md: 25, lg: 30, xl: 40 },
-      }}>
-      <HomeHead/>
+      }}
+    >
+      <NotificationsProvider>
+        <HomeHead/>
 
-      <AppBody
-        marvelApiKeyPublic={props.marvelApiKeyPublic}
-        marvelApiKeyPrivate={props.marvelApiKeyPrivate}
-      />
+        <AppBody
+          marvelApiKeyPublic={props.marvelApiKeyPublic}
+          marvelApiKeyPrivate={props.marvelApiKeyPrivate}
+        />
+      </NotificationsProvider>
     </MantineProvider>
   )
 }
