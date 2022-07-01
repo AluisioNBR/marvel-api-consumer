@@ -142,4 +142,4 @@ interface CharacterLink {
 }
 
 export { typeDefs }
-export type { MarvelApiCharacterResponse, Character }
+export type { MarvelApiCharacterResponse, Character, CharacterComicsOrSeriesOrEvents }

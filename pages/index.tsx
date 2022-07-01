@@ -33,7 +33,7 @@ const Home: NextPage<StaticProps> = (props: StaticProps) => {
         spacing: { xs: 15, sm: 20, md: 25, lg: 30, xl: 40 },
       }}
     >
-      <NotificationsProvider>
+      <NotificationsProvider position="top-left">
         <HomeHead/>
 
         <AppBody

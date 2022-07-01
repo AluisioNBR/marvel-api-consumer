@@ -1,24 +1,34 @@
 import { Image, Modal, Anchor } from '@mantine/core';
 import Link from 'next/link'
 import { useStyles } from '../../styles/useStyles'
+
 import type { Dispatch, SetStateAction } from 'react';
+import type { CharacterComicsOrSeriesOrEvents } from '../../pages/api/typeDefs'
 
 interface ItemModalInterface{
   opened: boolean,
   setOpened: Dispatch<SetStateAction<boolean>>,
-  description: string,
+
+  children: string,
   thumbnail: string,
-  children: string
+  description: string,
+  modified: string,
+  comics: CharacterComicsOrSeriesOrEvents,
 }
 
 export function ItemModal({
   opened,
   setOpened,
-  description,
+
+  children,
   thumbnail,
-  children
+  description,
+  modified,
+  comics,
 }: ItemModalInterface){
   const { classes } = useStyles();
+  const fullDateModified = new Date(modified).toUTCString().split(' ')
+  const dateModified = `${fullDateModified[1]} ${fullDateModified[2]} ${fullDateModified[3]}`
 
   return (
     <Modal
@@ -27,12 +37,13 @@ export function ItemModal({
       overflow='inside' centered={true}
       styles={{
         modal: {
+          backgroundColor: '#202020',
+          width: '90vw',
+        },
+        body: {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-
-          backgroundColor: '#202020',
-          width: '90vw',
         },
       }}
     >
@@ -44,7 +55,7 @@ export function ItemModal({
         }}>
           <Image
             src={thumbnail}
-            alt={children}
+            alt={children} caption={`Modificado em ${dateModified}`}
             width={200} height={200} radius="md"
           />
 
@@ -64,7 +75,7 @@ export function ItemModal({
       <Anchor component={Link} href="http://marvel.com">
         <a
           style={{
-            color: '#fdfdfd', fontWeight: 'bold'
+            color: '#fdfdfd', fontWeight: 'bold', textAlign: 'center'
           }}
           target="__blank"
         >
