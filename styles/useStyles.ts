@@ -72,9 +72,20 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     color: '#fdfdfd',
     fontWeight: 'bold',
 
-    [`@media (max-width: 720px)`]: {
+    [`@media (max-width: 1200px)`]: {
       flexDirection: 'column',
       alignItems: 'center'
+    }
+  },
+
+  comicsContent: {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    height: '9rem',
+    overflow: 'scroll',
+
+    [`@media (max-width: 1200px)`]: {
+      gridTemplateColumns: '1fr',
     }
   },
 

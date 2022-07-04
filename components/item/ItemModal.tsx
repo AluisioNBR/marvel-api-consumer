@@ -1,4 +1,4 @@
-import { Image, Modal, Anchor } from '@mantine/core';
+import { Image, Modal, Anchor, Button } from '@mantine/core';
 import Link from 'next/link'
 import { useStyles } from '../../styles/useStyles'
 
@@ -38,7 +38,7 @@ export function ItemModal({
       styles={{
         modal: {
           backgroundColor: '#202020',
-          width: '90vw',
+          width: '98vw',
         },
         body: {
           display: 'flex',
@@ -48,34 +48,29 @@ export function ItemModal({
       }}
     >
       <div className={classes.searchItemModal}>
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center'
-        }}>
-          <Image
-            src={thumbnail}
-            alt={children} caption={`Modificado em ${dateModified}`}
-            width={200} height={200} radius="md"
-          />
+        <CharacterImage
+          thumbnail={thumbnail}
+          dateModified={dateModified}
+        >
+          {children}
+        </CharacterImage>
 
-          <p style={{
-            color: '#fdfdfd',
-            fontWeight: 'bold',
-            fontSize: '1.8rem',
-            textAlign: 'center'
-          }}>
-            {children}
-          </p>
+        <div>
+          <p style={{ fontSize: '1.1rem' }}>{description}</p>
+
+          <CharacterComics>
+            {comics}
+          </CharacterComics>
         </div>
-
-        <p style={{ fontSize: '1.1rem' }}>{description}</p>
       </div>
 
       <Anchor component={Link} href="http://marvel.com">
         <a
           style={{
-            color: '#fdfdfd', fontWeight: 'bold', textAlign: 'center'
+            color: '#fdfdfd',
+            fontWeight: 'bold',
+            textAlign: 'center',
+            textDecoration: 'none'
           }}
           target="__blank"
         >
@@ -83,5 +78,67 @@ export function ItemModal({
         </a>
       </Anchor>
     </Modal>
+  )
+}
+
+function CharacterImage({
+  children,
+  thumbnail,
+  dateModified
+}: {
+  children: string,
+  thumbnail: string,
+  dateModified: string
+}){
+  return (
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center'
+    }}>
+      <Image
+        src={thumbnail}
+        alt={children} caption={`Modified in ${dateModified}`}
+        width={200} height={200} radius="md"
+      />
+
+      <h2 style={{
+        color: '#fdfdfd',
+        textAlign: 'center'
+      }}>
+        {children}
+      </h2>
+    </div>
+  )
+}
+
+function CharacterComics({ children }: {
+  children: CharacterComicsOrSeriesOrEvents
+}){
+  const { classes } = useStyles();
+  const comicsContent = children.items.map((comic) => {
+    return (
+      <Button
+        variant="default" radius='xs' size="md"
+        style={{ backgroundColor: '#efefef' }}
+      >
+       {comic.name} 
+      </Button>
+    )
+  })
+
+  return (
+    <div>
+      <h2 style={{
+        color: '#fdfdfd',
+        textAlign: 'center'
+      }}>
+        Comics available: {children.available}
+      </h2>
+
+      <div className={classes.comicsContent}>
+        {comicsContent}
+      </div>
+    </div>
   )
 }

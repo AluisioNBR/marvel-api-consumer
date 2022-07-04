@@ -27,12 +27,7 @@ interface StaticProps{
 
 const Home: NextPage<StaticProps> = (props: StaticProps) => {
   return (
-    <MantineProvider 
-      theme={{
-        fontFamily: 'Open Sans, sans serif',
-        spacing: { xs: 15, sm: 20, md: 25, lg: 30, xl: 40 },
-      }}
-    >
+    <div>
       <NotificationsProvider position="top-left">
         <HomeHead/>
 
@@ -41,7 +36,7 @@ const Home: NextPage<StaticProps> = (props: StaticProps) => {
           marvelApiKeyPrivate={props.marvelApiKeyPrivate}
         />
       </NotificationsProvider>
-    </MantineProvider>
+    </div>
   )
 }
 
