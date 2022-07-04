@@ -4,7 +4,6 @@ import Head from 'next/head'
 
 import styles from '../styles/Home.module.css'
 
-import { MantineProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
 import { AppBody } from '../components/AppBody'
 

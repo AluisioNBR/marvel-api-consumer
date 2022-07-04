@@ -119,6 +119,7 @@ function CharacterComics({ children }: {
   const comicsContent = children.items.map((comic) => {
     return (
       <Button
+        key={comic.name}
         variant="default" radius='xs' size="md"
         style={{ backgroundColor: '#efefef' }}
       >

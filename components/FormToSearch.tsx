@@ -68,7 +68,7 @@ export function FormToSearch({ staticProps, searchValue, setSearchValue, setResp
 
         <Button
           onClick={() => submitContent()}
-          variant="default" radius='xl' color='dark' size="md"
+          variant="default" radius='xl' size="md"
           style={{ backgroundColor: '#efefef' }}
         >
           Search
